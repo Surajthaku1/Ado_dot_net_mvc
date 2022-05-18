@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Ado_dot_net_mvc.ViewModel.Category>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h4>Category</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var tu in Model)
+            {    <tr>
+    <td>@tu.id</td>
+    <td>@tu.name</td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", "Category", new { id = tu.id }, new { @class = "btn btn-warning" }) ||
+        @Html.ActionLink("Delete", "Delete", "Category", new { id = tu.id },new { @class="btn btn-info"}) 
+
+    </td>
+</tr>
+            }
+</table>
+
